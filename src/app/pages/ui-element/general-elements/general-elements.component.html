@@ -1,0 +1,41 @@
+<div class="divider-custom">
+  <h4>Component Example Toobar Custom</h4>
+  <app-toolbar-custom title="Toolbar Test Storybook"></app-toolbar-custom>
+</div>
+
+<div class="divider-custom">
+  <h4>Component Example Input Custom</h4>
+  <app-input-custom></app-input-custom>
+</div>
+
+<div class="divider-custom">
+  <h4>Component Example Serach AutoComplete Custom</h4>
+  <app-auto-complete-custom></app-auto-complete-custom>
+</div>
+
+<div class="divider-custom">
+  <h4>Component Example using NgRx (click on button New)</h4>
+  <p>Total people created: {{ totalPerson }}</p>
+  <div fxLayout="column" fxLayoutAlign="start center">
+    <div fxLayout="column" fxLayoutAlign="start center" style="max-width: 70%;">
+      <app-person
+        *ngFor="let p of people$ | async"
+        [person]="p"
+        (delete)="delete($event)"
+        (update)="update($event)"
+      ></app-person>
+    </div>
+
+    <button class="button-add" mat-fab color="primary" (click)="addNew()">
+      New
+    </button>
+    <button class="button-add-company" mat-fab color="primary" [routerLink]="['/company']">
+      <mat-icon aria-hidden="false" aria-label="Example home icon">apartment</mat-icon>      
+      
+    </button>
+  </div>
+</div>
+
+<!-- <div class="divider-custom">
+  <app-company-info></app-company-info>
+</div> -->
